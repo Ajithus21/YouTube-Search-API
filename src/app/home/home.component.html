@@ -1,0 +1,25 @@
+
+
+<div class="container">
+    <br>
+    <h1>YouTube Search</h1>
+<br>
+    <form [formGroup]="searchForm" (submit)="sendData()">
+        <div class="row">
+            <div class="col-lg-6">
+                <input type="text" formControlName="userName" class="form-control">
+            </div>
+            <div class="col-lg-1">
+                <input type="submit" value="Search" class="form-control btn btn-danger">
+            </div>
+            
+        </div>
+    </form>
+    <br>
+    
+    <div *ngFor = "let data of myData" class="embed-responsive embed-responsive-21by9 mt-4">
+        <iframe class="embed-responsive-item" [src]="getEmbedUrl(data.id.videoId)" frameborder="0" allowfullscreen></iframe>
+    </div>
+       
+      
+</div>
